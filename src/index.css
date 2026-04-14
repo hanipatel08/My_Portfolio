@@ -1,0 +1,314 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 1 0 0;
+    --foreground: 0.2 0.01 250;
+
+    --card: 0.99 0 0;
+    --card-foreground: 0.2 0.01 250;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.2 0.01 250;
+
+    --primary: 0.52 0.14 222;
+    --primary-foreground: 1 0 0;
+
+    --secondary: 0.93 0.04 222;
+    --secondary-foreground: 0.28 0.06 222;
+
+    --muted: 0.95 0.02 220;
+    --muted-foreground: 0.52 0.04 220;
+
+    --accent: 0.93 0.05 222;
+    --accent-foreground: 0.28 0.06 222;
+
+    --destructive: 0.55 0.22 25;
+    --destructive-foreground: 1 0 0;
+
+    --border: 0.9 0.03 220;
+    --input: 0.9 0.03 220;
+    --ring: 0.52 0.14 222;
+
+    --radius: 0.625rem;
+
+    --section-base: oklch(1 0 0);
+    --section-alt: oklch(0.965 0.025 220);
+
+    --hero-bg: oklch(0.99 0 0);
+    --hero-surface: oklch(0.96 0.02 230);
+
+    --chart-1: 0.52 0.14 222;
+    --chart-2: 0.62 0.12 195;
+    --chart-3: 0.72 0.09 170;
+    --chart-4: 0.65 0.15 250;
+    --chart-5: 0.48 0.17 285;
+
+    --sidebar: 0.97 0.015 220;
+    --sidebar-foreground: 0.2 0.01 250;
+    --sidebar-primary: 0.52 0.14 222;
+    --sidebar-primary-foreground: 1 0 0;
+    --sidebar-accent: 0.93 0.04 222;
+    --sidebar-accent-foreground: 0.28 0.06 222;
+    --sidebar-border: 0.9 0.03 220;
+    --sidebar-ring: 0.52 0.14 222;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+@layer components {
+  .section-divider {
+    border-top: 1px solid oklch(var(--border));
+  }
+
+  .font-display {
+    font-family: "Bricolage Grotesque", sans-serif;
+  }
+
+  .typewriter-cursor {
+    display: inline-block;
+    width: 2px;
+    height: 1em;
+    background-color: oklch(0.62 0.12 195);
+    margin-left: 2px;
+    vertical-align: text-bottom;
+    animation: blink 1s step-end infinite;
+  }
+
+  .logo-gradient {
+    background: linear-gradient(
+      135deg,
+      oklch(0.52 0.14 222) 0%,
+      oklch(0.62 0.12 195) 100%
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 24px oklch(0.52 0.14 222 / 0.08);
+  }
+
+  .glow-btn {
+    box-shadow: 0 0 20px oklch(0.52 0.14 222 / 0.4), 0 4px 15px
+      oklch(0.52 0.14 222 / 0.2);
+  }
+
+  .glow-btn:hover {
+    box-shadow: 0 0 32px oklch(0.52 0.14 222 / 0.6), 0 6px 20px
+      oklch(0.52 0.14 222 / 0.3);
+  }
+
+  .hero-text-glow {
+    text-shadow: 0 0 40px oklch(0.62 0.12 195 / 0.5);
+  }
+
+  .section-heading {
+    font-family: "Bricolage Grotesque", sans-serif;
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    font-weight: 800;
+    line-height: 1.15;
+  }
+
+  .pulse-ring {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid oklch(0.52 0.14 222 / 0.5);
+    animation: pulse-expand 2s ease-out infinite;
+  }
+
+  .pulse-ring:nth-child(2) {
+    animation-delay: 0.6s;
+  }
+
+  .pulse-ring:nth-child(3) {
+    animation-delay: 1.2s;
+  }
+}
+
+@layer utilities {
+  @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes pulse-expand {
+    0% {
+      transform: scale(1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1.4);
+      opacity: 0;
+    }
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-12px);
+    }
+  }
+
+  @keyframes float-slow {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-8px);
+    }
+  }
+
+  @keyframes scroll-bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+    50% {
+      transform: translateY(6px);
+      opacity: 0.5;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% center;
+    }
+    100% {
+      background-position: 200% center;
+    }
+  }
+
+  @keyframes glow-pulse {
+    0%,
+    100% {
+      box-shadow: 0 0 20px oklch(0.52 0.14 222 / 0.4), 0 4px 15px
+        oklch(0.52 0.14 222 / 0.2);
+    }
+    50% {
+      box-shadow: 0 0 35px oklch(0.52 0.14 222 / 0.65), 0 6px 25px
+        oklch(0.62 0.12 195 / 0.35);
+    }
+  }
+
+  @keyframes progress-bar {
+    from {
+      width: 0;
+    }
+    to {
+      width: var(--progress-width, 100%);
+    }
+  }
+
+  @keyframes photoGlow {
+    0%,
+    100% {
+      filter: drop-shadow(0 0 16px oklch(0.52 0.14 222 / 0.45))
+        drop-shadow(0 0 32px oklch(0.52 0.14 222 / 0.2));
+    }
+    50% {
+      filter: drop-shadow(0 0 28px oklch(0.62 0.12 195 / 0.65))
+        drop-shadow(0 0 56px oklch(0.62 0.12 195 / 0.3));
+    }
+  }
+
+  @keyframes slide-in-underline {
+    from {
+      transform: scaleX(0);
+    }
+    to {
+      transform: scaleX(1);
+    }
+  }
+
+  @keyframes fade-in-up {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-float {
+    animation: float 4s ease-in-out infinite;
+  }
+
+  .animate-float-slow {
+    animation: float-slow 5.5s ease-in-out infinite;
+  }
+
+  .animate-scroll-bounce {
+    animation: scroll-bounce 1.5s ease-in-out infinite;
+  }
+
+  .animate-photo-glow {
+    animation: photoGlow 3s ease-in-out infinite;
+  }
+
+  .animate-glow-pulse {
+    animation: glow-pulse 2.5s ease-in-out infinite;
+  }
+
+  .animate-shimmer {
+    background: linear-gradient(
+      90deg,
+      transparent 0%,
+      rgba(255, 255, 255, 0.4) 50%,
+      transparent 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2s linear infinite;
+  }
+
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+  }
+
+  @keyframes gradientRingRotate {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
