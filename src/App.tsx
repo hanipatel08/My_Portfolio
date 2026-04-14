@@ -180,17 +180,7 @@ const PROJECTS = [
     hasLive: true,
     gradient: "from-violet-900 to-purple-700",
   },
-  {
-    name: "Rentify",
-    subtitle: "Car Rental Website",
-    description:
-      "Developed a full-featured car rental application enabling users to browse, compare, rent vehicles, make online payments, and submit reviews. Responsive UI with Bootstrap.",
-    tags: ["HTML", "CSS", "JavaScript", "React.js", "Bootstrap"],
-    github: "https://github.com/hanipatel08/Rentify",
-    live: "",
-    hasLive: false,
-    gradient: "from-purple-700 to-violet-600",
-  },
+  
   {
     name: "Apex",
     subtitle: "Finance Dashboard",
@@ -1285,7 +1275,7 @@ export default function App() {
               viewport={{ once: true, margin: "-80px" }}
             >
               <SectionHeading icon={<Code2 size={20} />} label="Projects" />
-              <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 items-stretch">
+              <div className="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6 items-stretch">
                 {PROJECTS.map((proj, i) => (
                   <motion.div
                     key={proj.name}
