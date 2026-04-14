@@ -1691,14 +1691,7 @@ export default function App() {
             style={{ borderTop: "1px solid #e2e8f0" }}
           >
             <p>© {new Date().getFullYear()} Hani Patel. All rights reserved.</p>
-            <a
-              href={`https://caffeine.ai?utm_source=caffeine-footer&utm_medium=referral&utm_content=${encodeURIComponent(window.location.hostname)}`}
-              target="_blank"
-              rel="noreferrer"
-              className="hover:text-slate-700 transition-colors"
-            >
-              Built with ❤️ using caffeine.ai
-            </a>
+            
           </div>
         </div>
       </footer>
