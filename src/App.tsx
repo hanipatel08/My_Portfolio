@@ -400,7 +400,7 @@ function SectionHeading({
   );
 }
 
-const RESUME_PATH = "/assets/uploads/Hani-Patel_Frontend-3_years-1--2.pdf";
+const RESUME_PATH = "/assets/Resume.pdf";
 
 export default function App() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -1031,7 +1031,7 @@ export default function App() {
                   <div className="mt-4">
                     <a
                       href={RESUME_PATH}
-                      download="Hani-Patel_Frontend-3_years.pdf"
+                      download="Resume.pdf"
                       data-ocid="about.primary_button"
                       className="inline-flex items-center justify-start gap-2 px-4 py-2 rounded-lg text-sm font-medium text-white glow-btn transition-all duration-200"
                       style={{
@@ -1506,7 +1506,7 @@ export default function App() {
                 <motion.div variants={fadeUp} className="space-y-4">
                   <a
                     href={RESUME_PATH}
-                    download="Hani-Patel_Frontend-3_years.pdf"
+                    download="Resume.pdf"
                     data-ocid="contact.primary_button"
                     className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl font-semibold text-white transition-all duration-200 hover:scale-105 glow-btn"
                     style={{
@@ -1656,7 +1656,7 @@ export default function App() {
               </p>
               <a
                 href={RESUME_PATH}
-                download="Hani-Patel_Frontend-3_years.pdf"
+                download="Resume.pdf"
                 data-ocid="footer.primary_button"
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-sm text-white glow-btn transition-all duration-200 hover:scale-105"
                 style={{
